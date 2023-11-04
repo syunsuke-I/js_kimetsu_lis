@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>鬼滅API</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<style>
+.loading-indicator {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.spinner {
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  margin-right: 5px;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite;
+}
+
+</style>
+</head>
+<body class="bg-gray-100">
+
+<!-- ローディングインジケーターのためのHTML要素 -->
+<div id="loading-indicator" class="loading-indicator" style="display: none;">
+  <div class="spinner"></div> 
+  Loading...
+</div>
+
+
+<!-- ヘッダ -->
+<div class="text-center mt-8">
+  <h1 class="text-4xl font-bold">鬼滅API</h1>
+</div>
+
+<div class="flex justify-center mt-14 space-x-4">
+  <!-- 全キャラクター -->
+  <label class="flex items-center">
+    <input type="radio" name="group" id = "all" value="all" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+    <span class="ml-2 text-gray-700">全キャラクター</span>
+  </label>
+  
+  <!-- 鬼殺隊 -->
+  <label class="flex items-center">
+    <input type="radio" name="group"  id = "kisatsutai" value="hashira" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+    <span class="ml-2 text-gray-700">鬼殺隊</span>
+  </label>
+  
+  <!-- 柱 -->
+  <label class="flex items-center">
+    <input type="radio" name="group"  id = "hashira" value="pillars" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+    <span class="ml-2 text-gray-700">柱</span>
+  </label>
+  
+  <!-- 鬼 -->
+  <label class="flex items-center">
+    <input type="radio" name="group" id = "oni" value="oni" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+    <span class="ml-2 text-gray-700">鬼</span>
+  </label>
+</div>
+
+<!-- アイテム一覧 -->
+<div class="flex flex-wrap justify-center -mx-2 mt-8" id="cards-container">
+ <!-- アイテムカードが挿入される部分 --> 
+</div>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
