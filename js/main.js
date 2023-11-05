@@ -1,11 +1,12 @@
 import * as utils from './utils.js';
 
 const domain = "https://ihatov08.github.io/";
+const baseUrl = `${domain}kimetsu_api/api`
 const urls = {
-  all: `${domain}kimetsu_api/api/all.json`,
-  hashira: `${domain}kimetsu_api/api/hashira.json`,
-  oni: `${domain}kimetsu_api/api/oni.json`,
-  kisatsutai: `${domain}kimetsu_api/api/kisatsutai.json`,
+  all: `${baseUrl}/all.json`,
+  hashira: `${baseUrl}/hashira.json`,
+  oni: `${baseUrl}/oni.json`,
+  kisatsutai: `${baseUrl}/kisatsutai.json`,
 };
 
 /**
